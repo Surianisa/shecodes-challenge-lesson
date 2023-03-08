@@ -1,0 +1,209 @@
+.container {
+  border-radius: 25px;
+  box-sizing: border-box;
+  box-shadow: 0 0 70px -10px rgb(0 0 0 / 20%);
+  background-color: #222831;
+  color: #ffffff;
+  height: 400px;
+  width: auto;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "Oxygen", sans-serif;
+  background-color: #676779;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+.weather-side {
+  position: relative;
+  height: 100%;
+  border-radius: 25px;
+  box-shadow: 0 0 20px -10px rgb(0 0 0 / 20%);
+  background-image: url(../lempuyangtemple.jpg);
+  background-size: cover;
+  width: 300px;
+  transition: transform 200ms ease-in-out;
+  transform: translateZ(0) scale(1.02) perspective(1000px);
+  float: left;
+}
+.cloudy-icon {
+  font-size: 40px;
+}
+
+.weather-side:hover {
+  transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+.date-container {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+.date-dayname {
+  margin: 0;
+  font-size: 40px;
+}
+
+.date-day {
+  display: block;
+}
+
+.location {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.location-icon {
+  display: inline-block;
+  height: 0.8em;
+  width: auto;
+  margin-right: 5px;
+}
+
+.weather-container {
+  position: absolute;
+  bottom: 35px;
+  left: 25px;
+}
+
+.weather-temp {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2em;
+}
+.weather-temp a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.weather-desc {
+  margin: 0;
+}
+
+.info-side {
+  position: relative;
+  float: left;
+  height: 100%;
+  padding-top: 25px;
+}
+
+.today-info {
+  padding: 10px;
+  margin: 0 25px 25px 25px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  line-height: 1.25em;
+}
+
+.today-info > div:not(:last-child) {
+  margin: 0 0 10px 0;
+}
+
+.today-info > div .title {
+  float: left;
+  font-weight: 700;
+}
+
+.today-info > div .value {
+  float: right;
+}
+
+.week-list {
+  padding: 0;
+  list-style: none;
+  margin: 10px 35px;
+  box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.week-list > li {
+  float: left;
+  padding: 15px;
+  cursor: pointer;
+  transition: 200ms ease;
+  border-radius: 10px;
+}
+
+.week-list > li:hover {
+  transform: scale(1.1);
+  background: #fff;
+  color: #222831;
+  box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+}
+
+.week-list > li.active {
+  background: #fff;
+  color: #222831;
+  border-radius: 10px;
+}
+
+.week-list > li .day-name {
+  display: block;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+.week-list > li .day-icon {
+  display: block;
+  height: 30px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.week-list > li .day-temp {
+  display: block;
+  text-align: center;
+  margin: 10px 0 0 0;
+  font-weight: 700;
+}
+
+.location-button {
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 10px;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+  transition: transform 200ms ease;
+  background-image: url(../lempuyangtemple.jpg);
+  background-size: cover;
+  margin-top: 25px;
+}
+
+.location-container {
+  padding: 25px 35px;
+}
+
+.location-button:hover {
+  transition: transform 200ms ease-in-out;
+  transform: translateZ(0) scale(1.02) perspective(1000px);
+}
+
+#weather-form input {
+  border: none;
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+  font-family: "Oxygen", sans-serif;
+  background: transparent;
+  float: left;
+}
+
+#weather-form ul li {
+  list-style: none;
+  cursor: pointer;
+  float: right;
+}
+
+#locationIcon .clear {
+  clear: both;
+}
