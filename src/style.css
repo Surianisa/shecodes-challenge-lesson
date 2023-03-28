@@ -5,7 +5,7 @@
   background-color: #222831;
   color: #ffffff;
   height: 400px;
-  width: auto;
+  max-width: fit-content;
 }
 
 body {
@@ -32,13 +32,15 @@ body {
   transform: translateZ(0) scale(1.02) perspective(1000px);
   float: left;
 }
-.cloudy-icon {
-  font-size: 40px;
+
+.image {
+  height: 85px;
 }
 
 .weather-side:hover {
   transform: scale(1.1) perspective(1500px) rotateY(10deg);
 }
+
 .date-container {
   position: absolute;
   top: 25px;
@@ -75,15 +77,25 @@ body {
 .weather-temp {
   margin: 0;
   font-weight: 700;
-  font-size: 2em;
+  font-size: 35px;
+  color: #fff;
 }
-.weather-temp a {
+
+.weather-container .units {
+  font-size: 15px;
+  position: relative;
+  top: -15px;
+  margin-left: 5px;
+}
+
+.weather-container a {
   text-decoration: none;
   color: #fff;
 }
 
 .weather-desc {
   margin: 0;
+  text-transform: capitalize;
 }
 
 .info-side {
@@ -165,18 +177,18 @@ body {
 
 .location-button {
   outline: none;
-  width: 100%;
+  width: 50%;
   box-sizing: border-box;
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 10px;
   border: none;
-  color: #ffffff;
   font-weight: 700;
   box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
   transition: transform 200ms ease;
-  background-image: url(../lempuyangtemple.jpg);
-  background-size: cover;
-  margin-top: 25px;
+  background: #fff;
+  color: #222831;
+  margin-top: -49px;
+  float: right;
 }
 
 .location-container {
@@ -189,13 +201,18 @@ body {
 }
 
 #weather-form input {
-  border: none;
-  color: #fff;
   outline: none;
-  font-size: 1rem;
-  font-family: "Oxygen", sans-serif;
-  background: transparent;
-  float: left;
+  width: 45%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+  transition: transform 200ms ease;
+  background: #fff;
+  color: #222831;
+  margin-top: 26px;
 }
 
 #weather-form ul li {
@@ -204,6 +221,26 @@ body {
   float: right;
 }
 
+.current-button {
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 10px;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+  transition: transform 200ms ease;
+  background-image: url(../lempuyangtemple.jpg);
+  background-size: cover;
+  margin-top: 15px;
+}
+
+.current-button:hover {
+  transition: transform 200ms ease-in-out;
+  transform: translateZ(0) scale(1.02) perspective(1000px);
+}
 #locationIcon .clear {
   clear: both;
 }

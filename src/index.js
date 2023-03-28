@@ -1,7 +1,7 @@
 let days = [
   "Sunday",
   "Monday",
-  "Tueday",
+  "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
@@ -38,16 +38,19 @@ currentDate.innerHTML = `${date} ${month} ${year}`;
 localTime.innerHTML = `${hours} : ${minutes}`;
 
 function displayWeather(response) {
+    celciusTemperature = response.data.main.temp;
   document.querySelector("#location-city").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML = `${Math.round(
+  document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
-  )}°C`;
-  document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].main;
-  document.querySelector("#hum").innerHTML = response.data.main.humidity;
-  document.querySelector("#windy").innerHTML = Math.round(
-    response.data.wind.speed
   );
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#hum").innerHTML = `${response.data.main.humidity} %`;
+  document.querySelector("#windy").innerHTML = `${Math.round(
+    response.data.wind.speed
+  )} Km/h`;
+  let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function searchCity(city) {
@@ -58,7 +61,7 @@ function searchCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#weather-input").value;
+  let city = document.querySelector("#city-input").value;
   searchCity(city);
 }
 
@@ -71,13 +74,35 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-  debugger;
 }
 
 let form = document.querySelector("#weather-form");
 form.addEventListener("submit", handleSubmit);
 
+function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+    celciusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let temperatureElement = document.querySelector("#temp");
+    let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+function displayCelciusTemperature(event) {
+   event.preventDefault();
+    let temperatureElement = document.querySelector("#temp");
+    temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
+
+searchCity("Bali");
+
 // let currentLocationButton = document.querySelector("#current-location-button");
 // currentLocationButton.addEventListener("click", getCurrentLocation);
 
-// searchCity("Bali");
+

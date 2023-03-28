@@ -27,16 +27,18 @@
       <div class="weather-side">
         <div class="weather-gradient">
           <div class="date-container">
-            <h2 class="date-dayname">Friday</h2>
-            <span class="date-day" id="current-date">3 February 2023</span>
+            <h2 class="date-dayname" id="current-day"></h2>
+            <span class="date-day" id="current-date"></span>
             <i class="fa-sharp fa-solid fa-location-dot"></i>
-            <span class="location" id="location-city">Bali, ID</span>
+            <span class="location" id="location-city"></span>
           </div>
           <div class="weather-container">
-            <i class="fa-solid fa-cloud cloudy-icon"></i>
-            <h1 class="weather-temp" id="temp">21°C</h1>
-          
-            <h3 class="weather-desc" id="weather-description">Cloudy</h3>
+            <div class="image">
+            <img src=""  id="icon" class="img-icon"/>
+            </div>
+            <strong class="weather-temp" id="temp"></strong> 
+            <span class="units"> <a href="#" id="celcius-link">°C </a>| <a href="#" id="fahrenheit-link">°F</a> </span>
+            <h3 class="weather-desc" id="weather-description"></h3>
           </div>
         </div>
       </div>
@@ -47,22 +49,17 @@
             <div class="today-info">
               <div class="time">
                 <span class="tittle">Local time</span>
-                <span class="value" id="local-time">12:00</span>
-                <div class="clear"></div>
-              </div>
-              <div class="precipitation">
-                <span class="tittle">Precipitation</span>
-                <span class="value" id="precipitation">0 %</span>
+                <span class="value" id="local-time"></span>
                 <div class="clear"></div>
               </div>
               <div class="humidity">
                 <span class="tittle">Humidity</span>
-                <span class="value" id="hum">88 %</span>
+                <span class="value" id="hum"></span>
                 <div class="clear"></div>
               </div>
               <div class="wind">
                 <span class="tittle">Wind</span>
-                <span class="value" id="windy">16 km/h</span>
+                <span class="value" id="windy"></span>
                 <div class="clear"></div>
               </div>
             </div>
@@ -108,20 +105,27 @@
         <div class="location-container">
        
               <div class="button-location">   
-              <form action="" id="weather-form">  
+              <form id="weather-form">  
               <input
                 type="text"
-                name=""
-                id="weather-input"
+                id="city-input"
                 placeholder="Change location"
               />
         
               <ul>
-                <li><i class="fa-sharp fa-solid fa-location-dot" id="locationIcon"></i>
+                <!-- <li><i class="fa-sharp fa-solid fa-location-dot" id="locationIcon"></i> -->
               </ul>
               <button class="location-button" type="submit">Search</button>
             </div>
-      
+            <!-- <div class="current-button">
+            <button
+                  class="btn btn-success w-100"
+                  id="current-location-button"
+                  class="location-button"
+                >
+                  Current
+                </button>
+                </div> -->
           </form>
         </div>
       </div>
