@@ -5,7 +5,7 @@
   background-color: #222831;
   color: #ffffff;
   height: 400px;
-  max-width: fit-content;
+  max-width: auto;
 }
 
 body {
@@ -34,7 +34,8 @@ body {
 }
 
 .image {
-  height: 85px;
+  height: 90px;
+  margin-left: -10px;
 }
 
 .weather-side:hover {
@@ -85,7 +86,7 @@ body {
   font-size: 15px;
   position: relative;
   top: -15px;
-  margin-left: 5px;
+  margin-left: 3px;
 }
 
 .weather-container a {
@@ -107,14 +108,14 @@ body {
 
 .today-info {
   padding: 10px;
-  margin: 0 25px 25px 25px;
+  margin: 0 25px 10px 25px;
   border-radius: 10px;
   box-sizing: border-box;
   line-height: 1.25em;
 }
 
 .today-info > div:not(:last-child) {
-  margin: 0 0 10px 0;
+  margin: 0 0 7px 0;
 }
 
 .today-info > div .title {
@@ -124,6 +125,15 @@ body {
 
 .today-info > div .value {
   float: right;
+}
+
+.forecast-day {
+  padding-left: 10px;
+  display: block;
+}
+
+.day-temp-min {
+  opacity: 0.6;
 }
 
 .week-list {
@@ -136,7 +146,7 @@ body {
 
 .week-list > li {
   float: left;
-  padding: 15px;
+  padding: 10px;
   cursor: pointer;
   transition: 200ms ease;
   border-radius: 10px;
@@ -147,32 +157,6 @@ body {
   background: #fff;
   color: #222831;
   box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
-}
-
-.week-list > li.active {
-  background: #fff;
-  color: #222831;
-  border-radius: 10px;
-}
-
-.week-list > li .day-name {
-  display: block;
-  margin: 10px 0 0 0;
-  text-align: center;
-}
-
-.week-list > li .day-icon {
-  display: block;
-  height: 30px;
-  width: auto;
-  margin: 0 auto;
-}
-
-.week-list > li .day-temp {
-  display: block;
-  text-align: center;
-  margin: 10px 0 0 0;
-  font-weight: 700;
 }
 
 .location-button {
@@ -213,12 +197,6 @@ body {
   background: #fff;
   color: #222831;
   margin-top: 26px;
-}
-
-#weather-form ul li {
-  list-style: none;
-  cursor: pointer;
-  float: right;
 }
 
 .current-button {
