@@ -133,7 +133,7 @@ body {
 }
 
 .day-temp-min {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .week-list {
@@ -172,11 +172,12 @@ body {
   background: #fff;
   color: #222831;
   margin-top: -49px;
-  float: right;
+  cursor: pointer;
 }
 
 .location-container {
-  padding: 25px 35px;
+  padding: 25px 25px;
+  margin: 0 -10px 0 5px;
 }
 
 .location-button:hover {
@@ -199,25 +200,26 @@ body {
   margin-top: 26px;
 }
 
-.current-button {
+.btn-success {
   outline: none;
-  width: 100%;
+  width: 96%;
   box-sizing: border-box;
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 10px;
   border: none;
-  color: #ffffff;
   font-weight: 700;
   box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
   transition: transform 200ms ease;
   background-image: url(../lempuyangtemple.jpg);
   background-size: cover;
   margin-top: 15px;
+  color: #fff;
 }
 
-.current-button:hover {
+.btn-success:hover {
   transition: transform 200ms ease-in-out;
   transform: translateZ(0) scale(1.02) perspective(1000px);
+  cursor: pointer;
 }
 #locationIcon .clear {
   clear: both;
